@@ -1,4 +1,7 @@
-Exercise 1
+# Bundle 1
+
+## Exercise 1
+```
 Lenovo@DESKTOP-6LCGN4B MINGW64 ~ (main)
 $ cd git
 git-exercises/
@@ -70,3 +73,4 @@ Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
 $ git branch -D test
 Deleted branch test (was 04aba68).
 
+```

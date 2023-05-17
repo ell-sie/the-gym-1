@@ -193,3 +193,43 @@ Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
 $ git reset --hard HEAD
 HEAD is now at 79a3813 html files
 ```
+
+#Bundle 2
+
+##Exercise 1
+
+```
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/bundle-2)
+$ vi services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/bundle-2)
+$ git add .
+warning: LF will be replaced by CRLF in services.html.
+The file will have its original line endings in your working directory
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/bundle-2)
+$ git commit -m 'services page'
+[ft/bundle-2 6a93753] services page
+ 1 file changed, 16 insertions(+)
+ create mode 100644 services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/bundle-2)
+$ git push origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 533 bytes | 266.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/ell-sie/Gym-Git-Exercise-Solutions/pull/new/ft/bundle-2
+remote:
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+```

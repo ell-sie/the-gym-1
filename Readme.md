@@ -74,3 +74,122 @@ $ git branch -D test
 Deleted branch test (was 04aba68).
 
 ```
+
+##Exercise 2
+
+```
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ touch home.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ vi home.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git add .
+warning: LF will be replaced by CRLF in home.html.
+The file will have its original line endings in your working directory
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash save "home"
+Saved working directory and index state On dev: home
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ touch about.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ vi about.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git add .
+warning: LF will be replaced by CRLF in about.html.
+The file will have its original line endings in your working directory
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash save "about"
+Saved working directory and index state On dev: about
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ touch team.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ vi team.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git add .
+warning: LF will be replaced by CRLF in team.html.
+The file will have its original line endings in your working directory
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash save "team"
+Saved working directory and index state On dev: team
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash list
+stash@{0}: On dev: team
+stash@{1}: On dev: about
+stash@{2}: On dev: home
+stash@{3}: On dev: changes made to home
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (e83018504509d751540864d0015b6aa499086169)
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash pop stash@{2}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    about.html
+
+Dropped stash@{2} (1437c8a355b013cbe059b34733a689a36d33df06)
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git commit -m 'html files'
+[dev 79a3813] html files
+ 1 file changed, 16 insertions(+)
+ create mode 100644 home.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ gut stash list
+bash: gut: command not found
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash list
+stash@{0}: On dev: team
+stash@{1}: On dev: home
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git stash pop stash@{0}
+On branch dev
+Your branch is ahead of 'origin/dev' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (f4c5332402f2ba52e76535516244262ca48d6e69)
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (dev)
+$ git reset --hard HEAD
+HEAD is now at 79a3813 html files
+```

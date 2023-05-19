@@ -538,4 +538,182 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
    4fb0b17..e7c9d6d  ft/services-redesign -> ft/services-redesign
 ```
+#Bundle 3
 
+##Exercise 1
+```
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/team-page)
+$ git log
+commit ebd739cbc60979b342e1acc7a96cb632a3817d0e (HEAD -> ft/team-page, origin/ft/team-page)
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 23:50:49 2023 +0200
+
+    team page
+
+commit b733dadcc7a7ce2c2d568aee7087ad16a8846616 (origin/main, main, ft/contact-page)
+Merge: 77fe50a 1ed2269
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 20:28:05 2023 +0200
+
+    Merge branch 'main' of https://github.com/ell-sie/Gym-Git-Exercise-Solutions
+
+commit 77fe50a3fde1717f346a9462e60d2b65a2ae7432
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 20:27:25 2023 +0200
+
+    bundle exercise2
+
+commit 1ed2269e46d64df46bf0a4ba35a9d3fc87753eff
+Merge: d98ebbd e7c9d6d
+:
+commit ebd739cbc60979b342e1acc7a96cb632a3817d0e (HEAD -> ft/team-page, origin/ft/team-page)
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 23:50:49 2023 +0200
+
+    team page
+
+commit b733dadcc7a7ce2c2d568aee7087ad16a8846616 (origin/main, main, ft/contact-page)
+Merge: 77fe50a 1ed2269
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 20:28:05 2023 +0200
+
+    Merge branch 'main' of https://github.com/ell-sie/Gym-Git-Exercise-Solutions
+
+commit 77fe50a3fde1717f346a9462e60d2b65a2ae7432
+Author: ll-sie <e.ndiramiye@alustudent.com>
+Date:   Fri May 19 20:27:25 2023 +0200
+
+    bundle exercise2
+
+commit 1ed2269e46d64df46bf0a4ba35a9d3fc87753eff
+Merge: d98ebbd e7c9d6d
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$ git cherry-pick ebd739cbc60979b342e1acc7a96cb632a3817d0e
+[ft/contact-page 325a132] team page
+ Date: Fri May 19 23:50:49 2023 +0200
+ 1 file changed, 16 insertions(+)
+ create mode 100644 team.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$ git commit -m 'contact page'
+On branch ft/contact-page
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+OAOAOA$ ^C
+
+OALenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$  git push --set-upstream origin ft/contact-page
+
+OAEnumerating objects: 4, done.
+OACounting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+OAWriting objects: 100% (3/3), 494 bytes | 494.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+OAremote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+OAremote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/ell-sie/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+OAremote:
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+OA * [new branch]      ft/contact-page -> ft/contact-page
+OAbranch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+OALenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+$
+OA
+OALenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/contact-page)
+OA$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+OA
+OALenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/faq-page)
+OA$ vi faq.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/faq-page)
+OA$ git add .
+OAwarning: LF will be replaced by CRLF in faq.html.
+The file will have its original line endings in your working directory
+OA
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/faq-page)
+$ git commit -m 'contact page'
+[ft/faq-page aabb138] contact page
+OA 1 file changed, 16 insertions(+)
+ create mode 100644 faq.html
+
+OALenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/faq-page)
+$  git push --set-upstream origin ft/faq-page
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 231 bytes | 115.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/ell-sie/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/faq-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/team-page)
+$ git revert ebd739cbc60979b342e1acc7a96cb632a3817d0e
+[ft/team-page ec946e3] Revert "team page"
+ 1 file changed, 16 deletions(-)
+ delete mode 100644 team.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/team-page)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 248 bytes | 248.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+   ebd739c..ec946e3  ft/team-page -> ft/team-page
+
+```

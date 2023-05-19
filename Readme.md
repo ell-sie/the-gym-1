@@ -233,3 +233,309 @@ remote:
 To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 ```
+##Exercise 2
+
+```
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ ls
+Bundle-1  Readme.md
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ ls
+Bundle-1  Readme.md
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 754 bytes | 75.00 KiB/s, done.
+From https://github.com/ell-sie/Gym-Git-Exercise-Solutions
+   6783228..f1f0d91  main       -> origin/main
+Updating 6783228..f1f0d91
+Fast-forward
+ services.html | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ ls
+Bundle-1  Readme.md  services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ vi services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ ls
+Bundle-1  Readme.md  services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/
+ft/bundle-2            ft/services-redesign
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/service-redesign
+error: pathspec 'ft/service-redesign' did not match any file(s) known to git
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/service-redesign
+error: pathspec 'ft/service-redesign' did not match any file(s) known to git
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft
+error: pathspec 'ft' did not match any file(s) known to git
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/services-redesign
+fatal: a branch named 'ft/services-redesign' already exists
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ ls
+Bundle-1  Readme.md  services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/services-redesign
+Switched to branch 'ft/services-redesign'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ ls
+Bundle-1  Readme.md
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> ft/services-redesign
+
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git push
+Everything up-to-date
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git commit -m 'pulled services'
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/services-redesign
+Switched to branch 'ft/services-redesign'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ ls
+Bundle-1  Readme.md
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git commit -m 'b and r'
+On branch ft/services-redesign
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout -D ft/services-redesign
+error: unknown switch `D'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge, diff3, or zdiff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git branch -d ft/services-redesign
+Deleted branch ft/services-redesign (was 6783228).
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/services-redesign
+Switched to a new branch 'ft/services-redesign'
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ ls
+Bundle-1  Readme.md  services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ vi services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git commit -m 'added changes to services'
+[ft/services-redesign 4fb0b17] added changes to services
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git push orgin ft/services-redesign
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git push
+fatal: The current branch ft/services-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/services-redesign
+
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ ^C
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$  git push --set-upstream origin ft/services-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 329 bytes | 329.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/services-redesign' on GitHub by visiting:
+remote:      https://github.com/ell-sie/Gym-Git-Exercise-Solutions/pull/new/ft/services-redesign
+remote:
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/services-redesign -> ft/services-redesign
+branch 'ft/services-redesign' set up to track 'origin/ft/services-redesign'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ vi services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git commit -m 'Add conflicting changes to services.html'
+[main d98ebbd] Add conflicting changes to services.html
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 358 bytes | 358.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+   f1f0d91..d98ebbd  main -> main
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (main)
+$ git checkout ft/services-redesign
+Switched to branch 'ft/services-redesign'
+Your branch is up to date with 'origin/ft/services-redesign'.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git diff main
+diff --git a/services.html b/services.html
+index 20a8fa0..474ce62 100644
+--- a/services.html
++++ b/services.html
+@@ -8,7 +8,7 @@
+ </head>
+ <body>
+     <h1>
+-      second change is the service page
+-    <h1>
++       sercvices page
++    </h1>
+ </body>
+ </html>
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign|MERGING)
+$ git commit -m 'merge main branch into ft/services-redesign'
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       services.html
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign|MERGING)
+$ git add .
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign|MERGING)
+$ git commit -m 'merge main branch into ft/services-redesign'
+[ft/services-redesign e7c9d6d] merge main branch into ft/services-redesign
+
+Lenovo@DESKTOP-6LCGN4B MINGW64 ~/git-exercises (ft/services-redesign)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 391 bytes | 130.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ell-sie/Gym-Git-Exercise-Solutions.git
+   4fb0b17..e7c9d6d  ft/services-redesign -> ft/services-redesign
+```
+
